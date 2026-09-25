@@ -40,31 +40,31 @@ Feature
 
 Description
 
-🌍 Flight Selection
+#### 🌍 Flight Selection
 
 Select the departure location and destination
 
-💺 Class Selection
+#### 💺 Class Selection
 
 Economic and Business class options
 
-👨‍👩‍👧 Passenger Details
+#### 👨‍👩‍👧 Passenger Details
 
 Adults, children, and infants can be selected
 
-📅 Booking Date
+#### 📅 Booking Date
 
 Enter the travel/booking date
 
-💰 Fare Calculation
+#### 💰 Fare Calculation
 
 Calculates price based on class and passenger count
 
-🪑 Seat Availability
+#### 🪑 Seat Availability
 
 Checks whether seats are available before booking
 
-🎫 Ticket Generation
+#### 🎫 Ticket Generation
 
 Creates a ticket through PrintTicket1
 
@@ -72,7 +72,7 @@ Creates a ticket through PrintTicket1
 
 Stores booking data using Java serialization
 
-🖼️ Travel UI
+#### 🖼️ Travel UI
 
 Uses map1.jpg and note_bg.gif as interface images
 
@@ -272,19 +272,19 @@ The source imports Swing, AWT, event handling, and Java I/O packages. filecit
 
 ## **🚀 How to Run**
 
-1. Install Java
+#### 1. Install Java
 
 Install a compatible JDK and verify:
 
 java -version
 javac -version
 
-2. Clone the Repository
+#### 2. Clone the Repository
 
 git clone https://github.com/PuligundlaLikithSai-2005/Web-Based-Airline-Reservation-System.git
 cd Web-Based-Airline-Reservation-System
 
-3. Keep Required Files Together
+#### 3. Keep Required Files Together
 
 Place the Java source files and image assets in the appropriate project directory.
 
@@ -293,13 +293,13 @@ For the current source, the following assets are required by filename:
 map1.jpg
 note_bg.gif
 
-4. Compile
+#### 4. Compile
 
 If all required Java classes are present:
 
 javac *.java
 
-5. Run
+#### 5. Run
 
 The current source contains:
 
@@ -414,10 +414,10 @@ The current project can be extended with:
 
 ## **P Likithsai**
 
-🔗 GitHub:
+#### 🔗 GitHub:
 https://github.com/PuligundlaLikithSai-2005
 
-🔗 Project Repository:
+#### 🔗 Project Repository:
 https://github.com/PuligundlaLikithSai-2005/Web-Based-Airline-Reservation-System
 
 ## **📄 License**

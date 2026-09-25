@@ -410,9 +410,7 @@ The current project can be extended with:
 
 📊 Booking and revenue reports
 
-## 👨‍💻 **Author**
-
-## **P Likithsai**
+# 👨‍💻 **Author - P Likithsai**
 
 #### 🔗 GitHub:
 https://github.com/PuligundlaLikithSai-2005

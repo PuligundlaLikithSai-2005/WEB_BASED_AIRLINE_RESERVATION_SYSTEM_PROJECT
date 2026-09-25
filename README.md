@@ -1,318 +1,429 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
+**✈️ Web-Based Airline Reservation System**
 
-public class InternationalFlight extends JFrame
+A Java Swing-based airline reservation application for searching international flights, calculating fares, checking seat availability, booking tickets, and storing booking information locally.
+
+
+
+
+
+**📌 Project Overview**
+
+The Web-Based Airline Reservation System is a Java-based graphical reservation application designed to provide a simple flight-booking workflow.
+
+The application allows a user to:
+
+Select a departure location.
+
+Select an international destination.
+
+Choose Economic or Business class.
+
+Enter a booking date.
+
+Select adults, children, and infants.
+
+Calculate the ticket price.
+
+Check seat availability.
+
+Confirm a booking.
+
+Generate a ticket.
+
+Save booking information for later use.
+
+The main reservation window is implemented using Java Swing and JFrame. fileciteturn7file0L6-L17
+
+**✨ Key Features**
+
+Feature
+
+Description
+
+🌍 Flight Selection
+
+Select the departure location and destination
+
+💺 Class Selection
+
+Economic and Business class options
+
+👨‍👩‍👧 Passenger Details
+
+Adults, children, and infants can be selected
+
+📅 Booking Date
+
+Enter the travel/booking date
+
+💰 Fare Calculation
+
+Calculates price based on class and passenger count
+
+🪑 Seat Availability
+
+Checks whether seats are available before booking
+
+🎫 Ticket Generation
+
+Creates a ticket through PrintTicket1
+
+💾 Booking Storage
+
+Stores booking data using Java serialization
+
+🖼️ Travel UI
+
+Uses map1.jpg and note_bg.gif as interface images
+
+The source defines destination options such as Bali, Bangkok, Cairo, Cape Town, Chicago, Dubai, Frankfurt, Hong Kong, Istanbul, London, Melbourne, New York, Paris, Rome, San Francisco, Shanghai, Singapore, Sydney, and Toronto. fileciteturn7file0L21-L23
+
+**🖥️ Application Flow**
+
+                    ┌──────────────────────┐
+                    │   Start Application  │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Select Destination   │
+                    │ & Travel Class       │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Enter Booking Date   │
+                    │ & Passenger Details  │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   Find Flight /      │
+                    │   Calculate Fare     │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Check Seat           │
+                    │ Availability        │
+                    └──────────┬───────────┘
+                               │
+                    ┌──────────┴──────────┐
+                    │                     │
+                 Available             Full
+                    │                     │
+                    ▼                     ▼
+          ┌──────────────────┐    ┌────────────────┐
+          │ Confirm Booking  │    │ Show "Seats    │
+          │       ↓          │    │ are full"      │
+          │ Generate Ticket  │    └────────────────┘
+          │       ↓          │
+          │ Save Booking     │
+          └──────────────────┘
+
+**🧩 Main Components**
+
+InternationalFlight.java
+
+The main GUI class extends JFrame and creates the booking interface. It contains:
+
+From/To selection
+
+Travel class selection
+
+Booking date
+
+Passenger selection
+
+Find Flight button
+
+Map image
+
+Notes section
+
+The application window is configured with a size of 795 × 580. fileciteturn7file0L19-L23 fileciteturn7file0L135-L143
+
+button2
+
+button2 implements ActionListener and handles the Find Flight / booking logic.
+
+It reads:
+
+Source
+
+Destination
+
+Class
+
+Booking date
+
+Adult count
+
+Children count
+
+Infant count
+
+and then determines the applicable price and flight time. fileciteturn7file0L147-L168
+
+Save1
+
+Save1 implements Serializable and represents the booking information stored by the application.
+
+Stored information includes:
+
+From
+
+To
+
+Class
+
+Adult count
+
+Children count
+
+Infant count
+
+Booking date
+
+Price
+
+Flight time
+
+fileciteturn7file0L296-L316
+
+**💰 Fare & Seat-Availability Logic**
+
+For Economic class, the application reads destination pricing and flight time from type1.row2.
+
+For Business class, it reads the corresponding values from type1.row4. fileciteturn7file0L172-L208
+
+The fare is then calculated using the passenger counts:
+
+Price = Adult Fare × Adults
+        + Adult Fare × (Children / 2)
+
+The application also checks the number of booked passengers for the selected destination and date.
+
+The maximum seat count checked by the current source is 60 seats. If the calculated count exceeds 60, the application displays:
+
+Seats are full. Sorry!
+
+Otherwise, the user is asked whether they want to book. fileciteturn7file0L213-L266
+
+**💾 Data Storage**
+
+The application uses Java object serialization to store booking records.
+
+The booking data is written to a local file named:
+
+save1
+
+The source reads existing objects using ObjectInputStream and writes updated booking objects using ObjectOutputStream. fileciteturn7file0L230-L250 fileciteturn7file0L269-L282
+
+Note: save1 is a local serialized data file, not a database.
+
+**🖼️ Project Assets**
+
+The Java source references two external image files:
+
+map1.jpg
+note_bg.gif
+
+map1.jpg is loaded for the flight/map area, while note_bg.gif is used as the notes background. fileciteturn7file0L43-L44 fileciteturn7file0L102-L104
+
+Recommended Repository Structure
+
+Web-Based-Airline-Reservation-System/
+│
+├── LoginPage.java
+├── InternationalFlight.java
+├── PrintTicket1.java
+├── button2.java
+├── Save1.java
+│
+├── map1.jpg
+├── note_bg.gif
+│
+├── save1
+│
+└── README.md
+
+Important: The uploaded source references LoginPage and PrintTicket1, but their implementations are not contained in this source file. Add the original versions of those files to the repository if they are available.
+
+**🛠️ Technologies Used**
+
+Java
+
+Java Swing
+
+AWT
+
+Java Event Handling
+
+Java Serialization
+
+ObjectInputStream
+
+ObjectOutputStream
+
+Git & GitHub
+
+The source imports Swing, AWT, event handling, and Java I/O packages. fileciteturn7file0L1-L4
+
+**🚀 How to Run**
+
+1. Install Java
+
+Install a compatible JDK and verify:
+
+java -version
+javac -version
+
+2. Clone the Repository
+
+git clone https://github.com/PuligundlaLikithSai-2005/Web-Based-Airline-Reservation-System.git
+cd Web-Based-Airline-Reservation-System
+
+3. Keep Required Files Together
+
+Place the Java source files and image assets in the appropriate project directory.
+
+For the current source, the following assets are required by filename:
+
+map1.jpg
+note_bg.gif
+
+4. Compile
+
+If all required Java classes are present:
+
+javac *.java
+
+5. Run
+
+The current source contains:
+
+public static void main(String args[])
 {
-	JComboBox CBFrom, CBTo, CBClass, CBAdult, CBChildren, CBInfant;
-	JLabel LFrom, LTo, LBookingDate, LClass, LAdult, LChildren, LInfant, LBookingDetails, LPassengerDetails, LDate, LImg1, LImg2, LNotes;
-	JTextField TFBookingDate;
-	Icon img1, img2;
-	JButton BFindFlight;
-	JPanel PPanel1, PPanel2;
-
-	LoginPage type1;
-
-	public InternationalFlight(LoginPage type1)
-	{
-		Container c =getContentPane();
-		c.setLayout(new BorderLayout());
-		String[] sItem1={"Trivandrum"};
-		String[] sItem2={"Bali","Bangkok","Cairo","CapeTown","Chicago","Dubai","Frankfurt","HongKong","Istanbul","London","LosAngeles","Melbourne","New York","Paris","Rome","SanFrancisco","shanghai","Singapore","Sydney","Toronto"};
-		String[] sItem3={"Economic","Business"};
-
-		this.type1 = type1;
-		PPanel1 = new JPanel(null);
-		PPanel1.setPreferredSize(new Dimension(500,200));
-
-		LBookingDetails = new JLabel("<html><b><font color=\"#C71585\">Booking Details</font></b></html>");
-		LFrom = new JLabel("From          :");
-		LTo = new JLabel("To               :");
-		LBookingDate = new JLabel("Booking Date:");
-		LClass = new JLabel("Class         :");
-
-		CBFrom = new JComboBox(sItem1);
-		CBTo = new JComboBox(sItem2);
-		CBClass = new JComboBox(sItem3);
-
-		TFBookingDate = new JTextField(10);
-		LDate = new JLabel("(DD/MM/YYYY)");
-		LDate.setForeground(Color.red);
-
-		img1=new ImageIcon("map1.jpg");
-		LImg1 = new JLabel(img1);
-
-		BFindFlight = new JButton("Find Flight");
-
-		LBookingDetails.setBounds(20,3,100,20);
-
-		LFrom.setBounds(20,40,100,20);
-		CBFrom.setBounds(100,40,100,20);
-
-		LTo.setBounds(20,100,100,20);
-		CBTo.setBounds(100,100,100,20);
-
-		LBookingDate.setBounds(14,160,100,20);
-		TFBookingDate.setBounds(100,160,100,20);
-		LDate.setBounds(210,160,100,20);
-
-		LClass.setBounds(20,220,100,20);
-		CBClass.setBounds(100,220,100,20);
-
-		BFindFlight.setBounds(50,270,100,25);
-
-		LImg1.setBounds(0,290,495,260);
-
-		PPanel1.add(LBookingDetails);
-		PPanel1.add(LFrom);
-		PPanel1.add(CBFrom);
-		PPanel1.add(LTo);
-		PPanel1.add(CBTo);
-		PPanel1.add(LBookingDate);
-		PPanel1.add(TFBookingDate);
-		PPanel1.add(LDate);
-		PPanel1.add(LClass);
-		PPanel1.add(CBClass);
-		PPanel1.add(BFindFlight);
-		PPanel1.add(LImg1);
-		PPanel1.setBackground(Color.white);
-
-		c.add(PPanel1,BorderLayout.WEST);
-
-		PPanel2 = new JPanel(null);
-		PPanel2.setPreferredSize(new Dimension(320,160));
-
-		LPassengerDetails=new JLabel("<html><b><font color=\"#C71585\">PassengerDetails</font></b></html>");
-
-		LAdult = new JLabel("Adults(12+)");
-
-		LChildren = new JLabel("Children(2-11)");
-		LInfant = new JLabel("Infants(under 2)");
-
-		String[] item4={"1","2","3","4","5","6"};
-		CBAdult = new JComboBox(item4);
-
-		String[] item5={"0","1","2","3","4"};
-		CBChildren = new JComboBox(item5);
-
-		String[] item6={"0","1","2","3"};
-		CBInfant = new JComboBox(item6);
-
-		img2 = new ImageIcon("note_bg.gif");
-		LImg2 = new JLabel(img2);
-		LNotes = new JLabel("<html><body><p>NOTE: Bookings with International Credit Cards <p> have temporarily been suspended.This Service<p> will resume shortly and we will have a notice<p> posted on our website.We regret any <p>inconvenience caused to our passengers.</body></html>");
-
-		LPassengerDetails.setBounds(40,3,100,20);
-
-		LAdult.setBounds(40,40,100,20);
-		CBAdult.setBounds(140,40,100,20);
-
-		LChildren.setBounds(40,105,100,20);
-		CBChildren.setBounds(140,105,100,20);
-
-		LInfant.setBounds(40,170,100,20);
-		CBInfant.setBounds(140,170,100,20);
-
-		LImg2.setBounds(16,220,320,200);
-		LNotes.setBounds(55,240,380,180);
-
-		PPanel2.add(LPassengerDetails);
-		PPanel2.add(LAdult);
-		PPanel2.add(LChildren);
-		PPanel2.add(LInfant);
-		PPanel2.add(CBAdult);
-		PPanel2.add(CBChildren);
-		PPanel2.add(CBInfant);
-
-		PPanel2.add(LNotes);
-		PPanel2.add(LImg2);
-
-		PPanel2.setBackground(Color.white);
-
-		c.add(PPanel2,BorderLayout.EAST);
-
-		setSize(795,580);
-		setVisible(true);
-
-		BFindFlight.addActionListener(new button2(this, type1));
-	}
-	public static void main(String args[])
-	{
-		LoginPage type1=null;
-		new InternationalFlight(type1);
-	}
+    LoginPage type1 = null;
+    new InternationalFlight(type1);
 }
 
-class button2 implements ActionListener
-{
-	InternationalFlight type;
-	LoginPage type1;
-	button2(InternationalFlight type, LoginPage type1)
-	{
-		this.type = type;
-		this.type1 = type1;
-	}
-	public void actionPerformed(ActionEvent e)
-	{
-		String sFrom = (String)type.CBFrom.getSelectedItem();
-		String sTo = (String)type.CBTo.getSelectedItem();
-		String sClass = (String)type.CBClass.getSelectedItem();
-		String sBookingDate = type.TFBookingDate.getText();
-		Integer iPrice=0;
-		String sTime="";
+so the main application entry point in this source is:
 
+InternationalFlight
 
-		Integer iAdult = Integer.parseInt((String)type.CBAdult.getSelectedItem());
-		Integer iChildren = Integer.parseInt((String)type.CBChildren.getSelectedItem());
-		Integer iInfant = Integer.parseInt((String)type.CBInfant.getSelectedItem());
+Run:
 
-		int i = 0;
+java InternationalFlight
 
-		if(sClass.equals("Economic"))
-		{
-			try{
-				while(i<20)
-				{
-					if(type1.row2[i][1].equals(sTo))
-					{
-						iPrice = Integer.parseInt((String)type1.row2[i][2]);
-						sTime = (String)type1.row2[i][3];
-						break;
-					}
-					i++;
-				}
-			}catch(Exception e1)
-			{
-				JOptionPane.showMessageDialog(null, "You have no rights to access");
-				System.exit(0);
-			}
-		}
-		else
-		{
-			try
-			{
-				while(i<20)
-				{
-					if(type1.row2[i][1].equals(sTo))
-					{
-						iPrice = Integer.parseInt((String)type1.row4[i][2]);
-						sTime = (String)type1.row4[i][3];
-						break;
-					}
-					i++;
-				}
-			}catch(Exception e1)
-			{
-				JOptionPane.showMessageDialog(null, "You have no rights to access it");
-				System.exit(0);
-			}
-		}
-		type.setTitle(iPrice + " " + sTime);
+The complete application requires the referenced LoginPage and PrintTicket1 implementations.
 
-		iPrice = (iPrice*iAdult)+(iPrice*(iChildren/2));
+**🔄 GitHub Workflow**
 
-		int iCount=0;
-		int iSeatCount=0;
+Source Java Files
+       │
+       ▼
+Add Images & Dependencies
+       │
+       ▼
+Compile & Test
+       │
+       ▼
+git add .
+       │
+       ▼
+git commit
+       │
+       ▼
+git push
+       │
+       ▼
+GitHub Repository
 
-		String[] sTempFrom=new String[1250];
-		String[] sTempTo=new String[1250];
-		String[] sTempClass=new String[1250];
-		String[] sTempBookingDate=new String[1250];
-		String[] sTempTime=new String[1250];
-		Integer[] iTempAdult=new Integer[1250];
-		Integer[] iTempChildren=new Integer[1250];
-		Integer[] iTempInfant=new Integer[1250];
-		Integer[] iTempPrice=new Integer[1250];
+Push Changes
 
-		try
-		{
-//read from data
-			Save1 save1;
-			ObjectInputStream OIS1 = new ObjectInputStream(new FileInputStream("save1"));
-			do
-			{
-				save1 = (Save1)OIS1.readObject();
-				sTempFrom[iCount] = save1.sFrom;
-				sTempTo[iCount] = save1.sTo;
-				sTempClass[iCount] = save1.sClass;
-				sTempBookingDate[iCount] = save1.sBookingDate;
-				sTempTime[iCount] = save1.sTime;
-				iTempAdult[iCount] = save1.iAdult;
-				iTempChildren[iCount] = save1.iChildren;
-				iTempInfant[iCount] = save1.iInfant;
-				iTempPrice[iCount] = save1.iPrice;
+git status
+git add .
+git commit -m "Add airline reservation system"
+git push origin main
 
-				iCount++;
-				if(save1.sBookingDate.equals(sBookingDate))
-					if(save1.sTo.equals(sTo))
-						iSeatCount=iSeatCount + save1.iAdult + save1.iChildren + save1.iInfant;
-			}while(save1!=null);
-			OIS1.close();
+**📸 Project Highlights**
 
-		}
-		catch(Exception e1)
-		{
-		}
+Booking Interface
 
-		iSeatCount = iSeatCount + iAdult + iChildren + iInfant;
+The main interface provides flight details, passenger selection, booking date, class selection, and a Find Flight action.
 
-		if(iSeatCount > 60)
-		{
-			JOptionPane.showMessageDialog(null,"Seats are full. Sorry!");
-		}
-		else
-		{
-			int iChoice = JOptionPane.showConfirmDialog(null,"Seats available. Do you want to Book now?");
-			if(iChoice == JOptionPane.YES_OPTION)
-			{
-				new PrintTicket1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
-			try
-			{
-//write into data
-				Save1 save2=new Save1(sFrom, sTo, sClass, iAdult, iChildren, iInfant, sBookingDate, iPrice, sTime);
-				ObjectOutputStream OOS1 = new ObjectOutputStream(new FileOutputStream("save1"));
-				for(i=0;i<iCount;i++)
-				{
-					Save1 temp1=new Save1(sTempFrom[i], sTempTo[i], sTempClass[i], iTempAdult[i], iTempChildren[i], iTempInfant[i], sTempBookingDate[i], iTempPrice[i], sTempTime[i]);
-					OOS1.writeObject(temp1);
-System.out.println(temp1);
-				}
-				OOS1.writeObject(save2);
-				OOS1.close();
-			}catch(Exception e1)
-			{
-				System.out.println(e1);
-			}
-			}
-			else
-			{
-			}
-		}
-	}
-}
+Flight Map
 
+map1.jpg is displayed below the booking controls in the left panel. fileciteturn7file0L63-L79
 
-class Save1 implements Serializable
-{
-	String sFrom, sTo, sClass, sBookingDate, sTime;
-	Integer iPrice, iAdult, iChildren, iInfant;
-//	int iCount;
-	public Save1(String sFrom, String sTo, String sClass, Integer iAdult, Integer iChildren, Integer iInfant, String sBookingDate, Integer iPrice, String sTime)
-	{
-		this.sFrom=sFrom;
-		this.sTo=sTo;
-		this.sClass=sClass;
-		this.iAdult=iAdult;
-		this.iChildren=iChildren;
-		this.iInfant=iInfant;
-		this.sBookingDate=sBookingDate;
-		this.iPrice=iPrice;
-		this.sTime=sTime;
-//		this.iCount = iCount;
-	}
-	public String toString()
-	{
-		return sFrom+" "+sTo+" "+sClass+" "+iAdult+" "+iChildren+" "+iInfant+" "+sBookingDate+" "+iPrice+" "+sTime;
-	}
-}
+Passenger & Notes Panel
+
+The right panel contains adult, child, and infant selection controls together with the notes area. fileciteturn7file0L83-L131
+
+**🎯 Learning Outcomes**
+
+This project demonstrates practical use of:
+
+Java GUI development
+
+Swing components
+
+Event-driven programming
+
+Object-oriented programming
+
+File handling
+
+Object serialization
+
+Array-based data processing
+
+Conditional business logic
+
+Passenger and seat calculations
+
+Basic Git/GitHub project management
+
+**🔮 Possible Future Enhancements**
+
+The current project can be extended with:
+
+🔐 User login and authentication
+
+🗄️ MySQL/Oracle database integration
+
+💳 Online payment integration
+
+📧 Email ticket confirmation
+
+🪑 Visual seat selection
+
+🔎 Advanced flight search
+
+📱 Responsive web/mobile interface
+
+🧾 PDF ticket generation
+
+👨‍💼 Admin dashboard
+
+📊 Booking and revenue reports
+
+👨‍💻 **Author**
+
+**P Likithsai**
+
+🔗 GitHub:
+https://github.com/PuligundlaLikithSai-2005
+
+🔗 Project Repository:
+https://github.com/PuligundlaLikithSai-2005/Web-Based-Airline-Reservation-System
+
+**📄 License**
+
+This project is intended for educational and learning purposes.
+
+**⭐ Support**
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.

@@ -424,6 +424,6 @@ https://github.com/PuligundlaLikithSai-2005/Web-Based-Airline-Reservation-System
 
 This project is intended for educational and learning purposes.
 
-##**⭐ Support**
+## **⭐ Support**
 
 If you find this project useful, consider giving the repository a ⭐ on GitHub.

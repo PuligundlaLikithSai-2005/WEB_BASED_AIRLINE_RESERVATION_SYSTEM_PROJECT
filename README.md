@@ -1,4 +1,4 @@
-#**✈️ Web-Based Airline Reservation System**
+# **✈️ Web-Based Airline Reservation System**
 
 A Java Swing-based airline reservation application for searching international flights, calculating fares, checking seat availability, booking tickets, and storing booking information locally.
 
@@ -6,7 +6,7 @@ A Java Swing-based airline reservation application for searching international f
 
 
 
-##**📌 Project Overview**
+## **📌 Project Overview**
 
 The Web-Based Airline Reservation System is a Java-based graphical reservation application designed to provide a simple flight-booking workflow.
 
@@ -34,7 +34,7 @@ Save booking information for later use.
 
 The main reservation window is implemented using Java Swing and JFrame. fileciteturn7file0L6-L17
 
-##**✨ Key Features**
+## **✨ Key Features**
 
 Feature
 
@@ -78,7 +78,7 @@ Uses map1.jpg and note_bg.gif as interface images
 
 The source defines destination options such as Bali, Bangkok, Cairo, Cape Town, Chicago, Dubai, Frankfurt, Hong Kong, Istanbul, London, Melbourne, New York, Paris, Rome, San Francisco, Shanghai, Singapore, Sydney, and Toronto. fileciteturn7file0L21-L23
 
-##**🖥️ Application Flow**
+## **🖥️ Application Flow**
 
                     ┌──────────────────────┐
                     │   Start Application  │
@@ -121,7 +121,7 @@ The source defines destination options such as Bali, Bangkok, Cairo, Cape Town, 
           │ Save Booking     │
           └──────────────────┘
 
-##**🧩 Main Components**
+## **🧩 Main Components**
 
 InternationalFlight.java
 
@@ -191,7 +191,7 @@ Flight time
 
 fileciteturn7file0L296-L316
 
-##**💰 Fare & Seat-Availability Logic**
+## **💰 Fare & Seat-Availability Logic**
 
 For Economic class, the application reads destination pricing and flight time from type1.row2.
 
@@ -210,7 +210,7 @@ Seats are full. Sorry!
 
 Otherwise, the user is asked whether they want to book. fileciteturn7file0L213-L266
 
-##**💾 Data Storage**
+## **💾 Data Storage**
 
 The application uses Java object serialization to store booking records.
 
@@ -222,7 +222,7 @@ The source reads existing objects using ObjectInputStream and writes updated boo
 
 Note: save1 is a local serialized data file, not a database.
 
-##**🖼️ Project Assets**
+## **🖼️ Project Assets**
 
 The Java source references two external image files:
 
@@ -250,7 +250,7 @@ Web-Based-Airline-Reservation-System/
 
 Important: The uploaded source references LoginPage and PrintTicket1, but their implementations are not contained in this source file. Add the original versions of those files to the repository if they are available.
 
-##**🛠️ Technologies Used**
+## **🛠️ Technologies Used**
 
 Java
 
@@ -270,7 +270,7 @@ Git & GitHub
 
 The source imports Swing, AWT, event handling, and Java I/O packages. fileciteturn7file0L1-L4
 
-##**🚀 How to Run**
+## **🚀 How to Run**
 
 1. Install Java
 
@@ -319,7 +319,7 @@ java InternationalFlight
 
 The complete application requires the referenced LoginPage and PrintTicket1 implementations.
 
-##**🔄 GitHub Workflow**
+## **🔄 GitHub Workflow**
 
 Source Java Files
        │
@@ -348,7 +348,7 @@ git add .
 git commit -m "Add airline reservation system"
 git push origin main
 
-##**📸 Project Highlights**
+## **📸 Project Highlights**
 
 Booking Interface
 
@@ -362,7 +362,7 @@ Passenger & Notes Panel
 
 The right panel contains adult, child, and infant selection controls together with the notes area. fileciteturn7file0L83-L131
 
-##**🎯 Learning Outcomes**
+## **🎯 Learning Outcomes**
 
 This project demonstrates practical use of:
 
@@ -386,7 +386,7 @@ Passenger and seat calculations
 
 Basic Git/GitHub project management
 
-##**🔮 Possible Future Enhancements**
+## **🔮 Possible Future Enhancements**
 
 The current project can be extended with:
 
@@ -410,9 +410,9 @@ The current project can be extended with:
 
 📊 Booking and revenue reports
 
-##👨‍💻 **Author**
+## 👨‍💻 **Author**
 
-##**P Likithsai**
+## **P Likithsai**
 
 🔗 GitHub:
 https://github.com/PuligundlaLikithSai-2005
@@ -420,7 +420,7 @@ https://github.com/PuligundlaLikithSai-2005
 🔗 Project Repository:
 https://github.com/PuligundlaLikithSai-2005/Web-Based-Airline-Reservation-System
 
-##**📄 License**
+## **📄 License**
 
 This project is intended for educational and learning purposes.
 
